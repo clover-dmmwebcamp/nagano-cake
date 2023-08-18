@@ -1,62 +1,47 @@
 Rails.application.routes.draw do
-
-  namespace :admin do
-    get 'orders/show'
-  end
-  namespace :admin do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-  end
-  namespace :admin do
-    get 'categories/index'
-    get 'categories/edit'
-  end
-  namespace :admin do
-    get 'products/index'
-    get 'products/new'
-    get 'products/show'
-    get 'products/edit'
-  end
-  namespace :admin do
-    get 'homes/top'
-  end
-  namespace :public do
-    get 'addresses/index'
-    get 'addresses/edit'
-  end
-  namespace :public do
-    get 'orders/new'
-    post 'orders/check'
-    get 'orders/complete'
-    get 'orders/index'
-    get 'orders/show'
-  end
-  namespace :public do
-    get 'cart_products/index'
-  end
-  namespace :public do
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/check'
-  end
-  namespace :public do
-    get 'products/index'
-    get 'products/show'
-  end
-  namespace :public do
-    get 'homes/top'
-    get 'homes/about'
-  end
+# 管理者用
   devise_for :admin, skip: [:registrations, :password], controllers: {
   sessions: "admin/sessions"
   }
-
+# 顧客用
   devise_for :customers,skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
   }
 
+# 管理者側のルーティング
+  namespace :admin do
+    root to: 'homes#top'
+    resources :products, except: [:destroy]
+    resources :categories, only: [:index, :create, :edit, :update]
+    resources :customers, only: [:index, :show, :edit, :update]
+    resources :orders, only: [:show, :update] do
+      resources :order_details, only: [:update]
+    end
+  end
 
+# 顧客側のルーティング
+  scope module: :public do
+    root to: 'homes#top'
+    get 'about' => 'homes#about'
+    get 'customers/mypage' => 'customers#show'
+    get 'customers/infomation/edit' => 'customers#edit'
+    patch 'customers/infomation' => 'customers#update'
+    get 'customers/check' => 'customers#check'
+    patch 'customers/withdraw' => 'customers#withdraw'
+    resources :products, only: [:index, :show]
+    resources :cart_products, only: [:index, :update, :destroy, :create] do
+      collection do
+        delete 'destroy_all'
+      end
+    end
+    resources :orders, only: [:new, :create, :index, :show] do
+      collection do
+        post 'check'
+        get 'complete'
+      end
+    end
+    resources :addresses, except: [:new, :show]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
