@@ -1,5 +1,53 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'orders/show'
+  end
+  namespace :admin do
+    get 'customers/index'
+    get 'customers/show'
+    get 'customers/edit'
+  end
+  namespace :admin do
+    get 'categories/index'
+    get 'categories/edit'
+  end
+  namespace :admin do
+    get 'products/index'
+    get 'products/new'
+    get 'products/show'
+    get 'products/edit'
+  end
+  namespace :admin do
+    get 'homes/top'
+  end
+  namespace :public do
+    get 'addresses/index'
+    get 'addresses/edit'
+  end
+  namespace :public do
+    get 'orders/new'
+    post 'orders/check'
+    get 'orders/complete'
+    get 'orders/index'
+    get 'orders/show'
+  end
+  namespace :public do
+    get 'cart_products/index'
+  end
+  namespace :public do
+    get 'customers/show'
+    get 'customers/edit'
+    get 'customers/check'
+  end
+  namespace :public do
+    get 'products/index'
+    get 'products/show'
+  end
+  namespace :public do
+    get 'homes/top'
+    get 'homes/about'
+  end
   devise_for :admin, skip: [:registrations, :password], controllers: {
   sessions: "admin/sessions"
   }
@@ -8,7 +56,7 @@ Rails.application.routes.draw do
   registrations: "public/registrations",
   sessions: 'public/sessions'
   }
-  
-  
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
