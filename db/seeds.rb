@@ -61,3 +61,19 @@ Customer.create!(
  address: '大阪府吹田市',
  is_deleted: 'false'
  )
+
+Category.create!(
+  name: 'ケーキ'
+  )
+
+Category.create!(
+  name: 'プリン'
+  )
+
+Category.create!(
+  name: '焼き菓子'
+  )
+
+Category.create!(
+  name: 'キャンディ'
+  )
