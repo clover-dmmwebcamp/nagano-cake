@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   belongs_to :category
 
   def taxin_price
-    price*1.1
+    (without_tax*1.1).floor
   end
 
 end

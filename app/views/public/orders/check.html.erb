@@ -1,43 +1,39 @@
 <div class="container center-block">
   <div class="row">
-    <h4 class="bg-light">注文情報確認</h4>
+    <h4 class="ml-5 bg-light">注文情報確認</h4>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col-8">
         <!--カート内商品一覧テーブル-->
-      <table border="1" width="500">
+      <table class="table table-bordered">
         <thead class="bg-light">
           <tr>
             <th>商品名</th>
-            <th>単価</th>
+            <th>単価(税込)</th>
             <th>数量</th>
             <th>小計</th>
           </tr>
         </thead>
         <tbody>
           <!--商品情報登録後にeach文でカート内商品情報追加-->
+          <% @cart_products.each do |cart_product| %>
           <tr>
-            <td>aaa</td>
-            <td>aaa</td>
-            <td>aaa</td>
-            <td>aaa</td>
+            <td><%= cart_product.product.name %></td>
+            <td><%= cart_product.product.taxin_price %></td>
+            <td><%= cart_product.quantity %></td>
+            <td><%= cart_product.sum_of_price %></td>
           </tr>
-          <tr>
-            <td>aaa</td>
-            <td>aaa</td>
-            <td>aaa</td>
-            <td>aaa</td>
-          </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
-    <div class="col">
+    <div class="col-3">
       <!--金額情報テーブル-->
       <!--商品情報登録後にカート内商品金額を入れられるように変更-->
-      <table border="1" width="150">
+      <table class="table table-bordered">
         <tr><th class="bg-light">送料</th><td><%= @delivery_cost %></td></tr>
-        <tr><th class="bg-light">商品合計</th><td>1750</td></tr>
-        <tr><th class="bg-light">請求金額</th><td>2560</td></tr>
+        <tr><th class="bg-light">商品合計</th><td><%= @total %></td></tr>
+        <tr><th class="bg-light">請求金額</th><td><%= @total_pay %></td></tr>
       </table>
     </div>
   </div>

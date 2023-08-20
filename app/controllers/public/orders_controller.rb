@@ -2,7 +2,7 @@ class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
     @customer = current_customer
-    # カートが空の場合にフラッシュメッセージとリダイレクトする記述
+    # カートが空の場合にフラッシュメッセージとリダイレクトするif文記述
   end
 
   def check
@@ -58,12 +58,15 @@ class Public::OrdersController < ApplicationController
   end
 
   def complete
+    # 文字表示のみのため不要
   end
 
   def index
+    @orders = current_customer.orders
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
 private
