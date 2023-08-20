@@ -1,2 +1,47 @@
-<h1>Admin::Products#show</h1>
-<p>Find me in app/views/admin/products/show.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 mx-auto mb-5">
+            <h5 class="mt-4 ml-5">商品詳細</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 mt-3 text-center">
+            <%= image_tag @product.product_image, size: "300x200" %>
+        </div>
+        <div class="col-lg-6">
+            <table class="table table-borderless">
+                <colgroup>
+                    <col style="width: 35%;">
+                    <col style="width: 65%;">
+                </colgroup>
+                <tr>
+                    <td>商品名</td>
+                    <td><%= @product.name %></td>
+                </tr>
+                <tr>
+                    <td>商品説明</td>
+                    <td><%= @product.introduction %></td>
+                </tr>
+                <tr>
+                    <td>ジャンル</td>
+                    <td><%= @product.category.name %></td>
+                </tr>
+                <tr>
+                    <td>税込価格<br>(税抜価格)</td>
+                    <td><%= @product.add_tax_price.to_s(:delimited) %>（<%= @product.without_tax %>）円</td>
+                </tr>
+                <tr>
+                    <td>販売ステータス</td>
+                    <% if @product.is_active %>
+                        <td class="text-success">販売中</td>
+                    <% else %>
+                        <td class="text-danger">販売停止中</td>
+                    <% end %>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="text-center">
+        <%= link_to "編集する", edit_admin_product_path(@product), class: "btn btn-success" %>
+    </div>
+</div>
