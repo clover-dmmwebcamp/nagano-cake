@@ -221,3 +221,16 @@ product16 = Product.create!(
   is_active: 'true',
   )
 product16.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_muffin.jpg')), filename: 'yakigashi_muffin.jpg')
+
+Address.create!(
+  name: '田中　春',
+  postcode: '1111111',
+  address: '埼玉県さいたま市'
+  )
+  
+Address.create!(
+  name: '佐々木　洋',
+  postcode: '4444444',
+  address: '福岡県博多'
+  )
+  
