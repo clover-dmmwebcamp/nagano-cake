@@ -9,7 +9,7 @@ Admin.create!(
   email: 'admin@admin',
   password: 'clover'
   )
-  
+
 Customer.create!(
   last_name: '田中',
   first_name: '春',
@@ -22,7 +22,7 @@ Customer.create!(
   address: '埼玉県さいたま市',
   is_deleted: 'false'
   )
-  
+
 Customer.create!(
   last_name: '佐々木',
   first_name: '洋',
@@ -35,7 +35,7 @@ Customer.create!(
   address: '福岡県博多市',
   is_deleted: 'false'
   )
-  
+
 Customer.create!(
  last_name: '鈴木',
  first_name: '裕',
@@ -48,7 +48,7 @@ Customer.create!(
  address: '大阪府大阪市',
  is_deleted: 'false'
  )
- 
+
  Customer.create!(
  last_name: '山田',
  first_name: '太郎',

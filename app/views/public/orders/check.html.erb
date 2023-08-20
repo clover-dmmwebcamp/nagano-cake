@@ -1,2 +1,37 @@
-<h1>Public::Orders#check</h1>
-<p>Find me in app/views/public/orders/check.html.erb</p>
+<h4>注文情報確認</h4>
+
+<!--カート内商品一覧テーブル-->
+<table>
+  <thead>
+
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>
+
+<!--金額情報テーブル-->
+<table>
+
+</table>
+
+<!--支払い方法-->
+<strong>支払方法</strong>
+<%= @order.pay_type_i18n %>
+</br>
+<!--お届け先-->
+<strong>お届け先</strong>
+<p>〒<%= @order.postcode %><%= @order.address %></br>
+   <%= @order.name %>
+</p>
+
+<%= form_with model: @order, url: orders_path, method: :post do |f| %>
+  <%= f.hidden_field :customer_id, :value => @customer.id %>
+  <%= f.hidden_field :postcode, :value => @order.postcode %>
+  <%= f.hidden_field :address, :value => @order.address%>
+  <%= f.hidden_field :name, :value => @order.name%>
+  <%= f.hidden_field :pay_type, :value => @order.pay_type %>
+  <%= f.hidden_field :delivery_cost, :value => @delivery_cost %>
+  <%= f.hidden_field :total_pay, :value => @total_pay %>
+  <%= f.submit "注文を確定する" %>
+<% end %>
