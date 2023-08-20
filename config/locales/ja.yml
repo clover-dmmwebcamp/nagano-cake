@@ -27,9 +27,17 @@
             has_many: "%{record}が存在しているので削除できません"
       models:
         category:
+        product:
       attributes:
         category:
           name: "ジャンル名"
+        product:
+          product_image: "商品画像"
+          name: "商品名"
+          introduction: "商品説明"
+          category: "ジャンル"
+          without_tax: "税抜価格"
+          is_active: "販売ステータス"
     date:
       abbr_day_names:
       - 日

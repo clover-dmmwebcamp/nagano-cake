@@ -4,10 +4,12 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @categories = Category.all
   end
 
   def create
     @product = Product.new(product_params)
+    @categories = Category.all
     if @product.save
       redirect_to admin_product_path(@product)
     else
