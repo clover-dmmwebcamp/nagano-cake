@@ -1,6 +1,6 @@
 class Public::AddressesController < ApplicationController
   def index
-    @addresses = Address.all
+    @addresses = current_customer.addresses.all
     @address = Address.new
   end
 
@@ -9,21 +9,34 @@ class Public::AddressesController < ApplicationController
   end
 
   def create
-    @address = Address.new
-    @address.user.id = cuurent_castomer.id
-    @book.save
-    redirect_to request.referer
+    @address = Address.new(address_params)
+    @address.customer_id = current_customer.id
+    @addresses = current_customer.addresses.all
+    if @address.save
+      redirect_to request.referer
+    else
+      render :index
+    end
   end
 
   def update
-    @aderss = Address.find(params[:id])
-    @address.update(address_params)
-    redirect_to request.referer
+    @address = Address.find(params[:id])
+    if @address.update(address_params)
+      redirect_to addresses_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     address = Address.find(params[:id])
-    address.desroy
+    address.destroy
     redirect_to request.referer
+  end
+  
+  private
+
+  def address_params
+    params.require(:address).permit(:postcode, :address, :name)
   end
 end
