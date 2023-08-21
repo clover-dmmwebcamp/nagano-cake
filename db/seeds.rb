@@ -1,3 +1,5 @@
+ActiveStorage::AnalyzeJob.queue_adapter = :inline
+ActiveStorage::PurgeJob.queue_adapter = :inline
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -9,7 +11,7 @@ Admin.create!(
   email: 'admin@admin',
   password: 'clover'
   )
-  
+
 Customer.create!(
   last_name: '田中',
   first_name: '春',
@@ -22,7 +24,7 @@ Customer.create!(
   address: '埼玉県さいたま市',
   is_deleted: 'false'
   )
-  
+
 Customer.create!(
   last_name: '佐々木',
   first_name: '洋',
@@ -35,7 +37,7 @@ Customer.create!(
   address: '福岡県博多市',
   is_deleted: 'false'
   )
-  
+
 Customer.create!(
  last_name: '鈴木',
  first_name: '裕',
@@ -48,7 +50,7 @@ Customer.create!(
  address: '大阪府大阪市',
  is_deleted: 'false'
  )
- 
+
  Customer.create!(
  last_name: '山田',
  first_name: '太郎',
@@ -77,7 +79,7 @@ Category.create!(
 Category.create!(
   name: 'キャンディ'
   )
-  
+
 product1 = Product.create!(
   name: '瀬戸内レモンケーキ(4号)',
   introduction: '瀬戸内産のレモンをふんだんに使用した夏限定のレモンケーキです。',
@@ -221,3 +223,17 @@ product16 = Product.create!(
   is_active: 'true',
   )
 product16.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_muffin.jpg')), filename: 'yakigashi_muffin.jpg')
+
+Address.create!(
+  customer_id: '1',
+  name: '田中　春',
+  postcode: '1111111',
+  address: '埼玉県さいたま市'
+  )
+
+Address.create!(
+  customer_id: '2',
+  name: '佐々木　洋',
+  postcode: '4444444',
+  address: '福岡県博多'
+  )
