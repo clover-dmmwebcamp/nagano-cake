@@ -1,5 +1,6 @@
 ActiveStorage::AnalyzeJob.queue_adapter = :inline
-ActiveStorage::PurgeJob.queue_adapter = :inline# This file should contain all the record creation needed to seed the database with its default values.
+ActiveStorage::PurgeJob.queue_adapter = :inline
+# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -229,11 +230,10 @@ Address.create!(
   postcode: '1111111',
   address: '埼玉県さいたま市'
   )
-  
+
 Address.create!(
   customer_id: '2',
   name: '佐々木　洋',
   postcode: '4444444',
   address: '福岡県博多'
   )
-  
