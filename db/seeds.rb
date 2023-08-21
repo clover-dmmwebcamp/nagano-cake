@@ -11,7 +11,7 @@ Admin.create!(
   email: 'admin@admin',
   password: 'clover'
   )
-  
+
 Customer.create!(
   last_name: '田中',
   first_name: '春',
@@ -24,7 +24,7 @@ Customer.create!(
   address: '埼玉県さいたま市',
   is_deleted: 'false'
   )
-  
+
 Customer.create!(
   last_name: '佐々木',
   first_name: '洋',
@@ -37,7 +37,7 @@ Customer.create!(
   address: '福岡県博多市',
   is_deleted: 'false'
   )
-  
+
 Customer.create!(
  last_name: '鈴木',
  first_name: '裕',
@@ -50,7 +50,7 @@ Customer.create!(
  address: '大阪府大阪市',
  is_deleted: 'false'
  )
- 
+
  Customer.create!(
  last_name: '山田',
  first_name: '太郎',
@@ -79,7 +79,7 @@ Category.create!(
 Category.create!(
   name: 'キャンディ'
   )
-  
+
 product1 = Product.create!(
   name: '瀬戸内レモンケーキ(4号)',
   introduction: '瀬戸内産のレモンをふんだんに使用した夏限定のレモンケーキです。',
@@ -230,11 +230,11 @@ Address.create!(
   postcode: '1111111',
   address: '埼玉県さいたま市'
   )
-  
+
 Address.create!(
   customer_id: '2',
   name: '佐々木　洋',
   postcode: '4444444',
   address: '福岡県博多'
   )
-  
+

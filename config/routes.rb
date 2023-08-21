@@ -44,4 +44,5 @@ Rails.application.routes.draw do
     resources :addresses, except: [:new, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "search" => "searches#search"
 end
