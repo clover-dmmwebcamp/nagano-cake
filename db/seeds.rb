@@ -1,3 +1,5 @@
+ActiveStorage::AnalyzeJob.queue_adapter = :inline
+ActiveStorage::PurgeJob.queue_adapter = :inline
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -223,12 +225,14 @@ product16 = Product.create!(
 product16.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_muffin.jpg')), filename: 'yakigashi_muffin.jpg')
 
 Address.create!(
+  customer_id: '1',
   name: '田中　春',
   postcode: '1111111',
   address: '埼玉県さいたま市'
   )
   
 Address.create!(
+  customer_id: '2',
   name: '佐々木　洋',
   postcode: '4444444',
   address: '福岡県博多'
