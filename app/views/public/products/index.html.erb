@@ -1,41 +1,37 @@
 <div class="container">
     <div class="row">
-        <div class="col-2 mt-5">
-            <table class = "table table-light border"> 
-                <tr>
-                    <th class="text-center category-head">ジャンル検索</th>
-                </tr>
-                <% @categories.each do |category| %>
-                    <tr>
-                        <td><%= category.name %></td>
-                    </tr>
-                <% end %>
-            </table>
-        </div>
-        <div class="col-10 mt-5">
+        <%= render 'category', categories: @categories %>
+        <div class="col-lg-10 mt-5">
             <h3 class="font-weight-bold d-inline">商品一覧</h3>
-            <h5 class="d-inline">(全<%= @products.count %>件)</h5>
-                <div class="container">
-                    <div class="row">
-                        <% @products.each do |product| %>
-                            <div class="col-3 mt-3">
-                                <div class="card">
-                                    <%= link_to product_path(product) do %>
-                                        <%= image_tag product.product_image, size: "150x100", class: "w-100" %>
-                                    <% end %>
-                                </div>
+            <h5 class="d-inline">(全<%= @product_all.count %>件)</h5>
+            <div class="container">
+                <div class="row">
+                    <% @products.each do |product| %>
+                        <div class="col-sm-3 mt-3 px-1">
+                            <div class="card h-100 border-0">
+                                <%= link_to product_path(product) do %>
+                                    <%= image_tag product.product_image, size: "150x120", class: "w-100" %>
+                                <% end %>
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <%= link_to product.name, product_path(product), class: "text-dark" %>
+                                        <% if product.is_active %>
+                                            <p class="text-success">販売中</p>
+                                        <% else %>
+                                            <p class="text-danger">販売停止中</p>
+                                        <% end %>
                                     </div>
                                     <div class="card-text">
-                                        ¥<%= product.add_tax_price.to_s(:delimited) %>(税込)
+                                        <h6><%= link_to product.name, product_path(product), class: "text-dark" %></h6>
                                     </div>
                                 </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <h6>¥<%= product.add_tax_price.to_s(:delimited) %>(税込)<h6>
+                                </div>
                             </div>
-                        <% end %>
-                    </div>
+                        </div>
+                    <% end %>
                 </div>
+            </div>
             <div class="d-flex justify-content-center mt-3">
                 <%= paginate @products %>
             </div>
