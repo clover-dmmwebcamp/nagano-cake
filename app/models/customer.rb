@@ -27,7 +27,7 @@ class Customer < ApplicationRecord
     last_name_kana + first_name_kana
   end
   
-  #退会済みユーザーが同じアカウントでログインできないように
+  #退会済みユーザーが同じアカウントでログインできないように制限
   def active_for_authentication?
     super && (is_deleted == false)
   end
