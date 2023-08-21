@@ -12,8 +12,56 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-expand-lg py-4">
+        <div class = "container border-bottom">
+          <%= link_to root_path, class: "mx-0" do %>
+            <%= image_tag "logo_image.png", alt: "LOGO", size: "280x70" %>
+          <% end %>
+          <div class="collapse navbar-collapse">
+            <% if customer_signed_in? %>
+              <ul class="navbar-nav ml-auto">
+                <%= link_to "マイページ", customers_mypage_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "商品一覧", products_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "カート", cart_products_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-light nav-link ml-2" %>
+              </ul>
+            <% elsif admin_signed_in? %>
+              <ul class="navbar-nav ml-auto">
+                <%= link_to "商品一覧", admin_products_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "会員一覧", admin_customers_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "注文履歴一覧", admin_root_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "ジャンル一覧", admin_categories_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-light nav-link ml-2" %>
+              </ul>
+            <% else %>
+              <ul class="navbar-nav ml-auto">
+                <%= link_to "About", about_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "新規登録", new_customer_registration_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "商品一覧", products_path, class: "btn btn-light nav-link ml-2" %>
+                <%= link_to "ログイン", new_customer_session_path, class: "btn btn-light nav-link ml-2" %>
+              </ul>
+            <% end %>
+            <div class="search_form ml-2">
+              <%= form_with url: search_path, local: true, method: :get do |f| %>
+                <%= f.text_field :word %>
+                <%= f.submit "search", class: "btn-sm btn-light" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <%= flash[:notice] %>
     <%= yield %>
-    <%= link_to "会員ログアウト", destroy_customer_session_path, method: :delete %>
-    <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
+    <footer>
+      <div class="container mt-5 border-top">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Nagano-cake.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
