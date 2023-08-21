@@ -38,6 +38,15 @@
           category: "ジャンル"
           without_tax: "税抜価格"
           is_active: "販売ステータス"
+        customer:
+          email: "メールアドレス"
+          last_name: "姓(漢字)"
+          first_name: "名(漢字)"
+          last_name_kana: "姓(カナ)"
+          first_name_kana: "名(カナ)"
+          postcode: "郵便番号"
+          address: "住所"
+          phone_number: "電話番号"
     date:
       abbr_day_names:
       - 日

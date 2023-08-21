@@ -8,6 +8,16 @@ class Customer < ApplicationRecord
   has_many :orders
   has_many :addresses
   
+  #バリデーション
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name_kana, presence: true
+  validates :first_name_kana, presence: true
+  validates :postcode, presence: true
+  validates :address, presence: true
+  validates :phone_number, presence: true
+  validates :email, presence: true, uniqueness: true
+  
   #会員フルネーム
   def full_name
     last_name + first_name
