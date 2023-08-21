@@ -2,15 +2,20 @@
     <div class="row">
         <%= render 'category', categories: @categories %>
         <div class="col-lg-10 mt-5">
-            <h3 class="font-weight-bold d-inline">商品一覧</h3>
-            <h5 class="d-inline">(全<%= @product_all.count %>件)</h5>
+            <% if params[:category_id] %>
+                <h3 class="font-weight-bold d-inline"><%= @category.name %>一覧</h3>
+                <h5 class="d-inline">(全<%= @category_product_all.count %>件)</h5>
+            <% else %>
+                <h3 class="font-weight-bold d-inline">商品一覧</h3>
+                <h5 class="d-inline">(全<%= @product_all.count %>件)</h5>
+            <% end %>
             <div class="container">
                 <div class="row">
                     <% @products.each do |product| %>
                         <div class="col-sm-3 mt-3 px-1">
                             <div class="card h-100 border-0">
                                 <%= link_to product_path(product) do %>
-                                    <%= image_tag product.product_image, size: "150x120", class: "w-100" %>
+                                    <%= image_tag product.product_image, size: "150x120", class: "w-100 rounded" %>
                                 <% end %>
                                 <div class="card-body">
                                     <div class="card-title">
