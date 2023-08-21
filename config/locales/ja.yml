@@ -28,6 +28,7 @@
       models:
         category:
         product:
+        address:
       attributes:
         category:
           name: "ジャンル名"
@@ -38,6 +39,10 @@
           category: "ジャンル"
           without_tax: "税抜価格"
           is_active: "販売ステータス"
+        address:
+          name: "宛名"
+          address: "住所"
+          postcode: "郵便番号"
     date:
       abbr_day_names:
       - 日
