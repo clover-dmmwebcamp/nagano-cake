@@ -1,3 +1,6 @@
+ActiveStorage::AnalyzeJob.queue_adapter = :inline
+ActiveStorage::PurgeJob.queue_adapter = :inline
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -77,7 +80,7 @@ Category.create!(
 Category.create!(
   name: 'キャンディ'
   )
-  
+
 product1 = Product.create!(
   name: '瀬戸内レモンケーキ(4号)',
   introduction: '瀬戸内産のレモンをふんだんに使用した夏限定のレモンケーキです。',

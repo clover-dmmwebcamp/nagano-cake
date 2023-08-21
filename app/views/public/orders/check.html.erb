@@ -19,7 +19,7 @@
           <% @cart_products.each do |cart_product| %>
           <tr>
             <td><%= cart_product.product.name %></td>
-            <td><%= cart_product.product.taxin_price %></td>
+            <td><%= cart_product.product.add_tax_price %></td>
             <td><%= cart_product.quantity %></td>
             <td><%= cart_product.sum_of_price %></td>
           </tr>
