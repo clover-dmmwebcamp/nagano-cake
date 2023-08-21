@@ -42,19 +42,23 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
-    @order.save
 
-    current_customer.cart_products.each do |cart_product|
-      @order_detail = OrderDetails.new
-      @order_detail.product_id = cart_product.product_id
-      @order_detail.order_id = @order.id
-      @order_detail.quantity = cart_product.quantity
-      @order_detail.include_tax = (cart_product.product.without_tax * 1.1).floor
-      @order_detail.save
+    if @order.save
+      current_customer.cart_products.each do |cart_product|
+        @order_detail = OrderDetail.new
+        @order_detail.product_id = cart_product.product_id
+        @order_detail.order_id = @order.id
+        @order_detail.quantity = cart_product.quantity
+        @order_detail.include_tax = (cart_product.product.without_tax * 1.1).floor
+        @order_detail.save
+      end
+      redirect_to complete_orders_path
+      current_customer.cart_products.destroy_all
+    else
+      flash.now[:notice] = "入力情報を確認してください。"
+      redirect_to new_order_path
     end
 
-    current_customer.cart_products.destroy_all
-    redirect_to complete_orders_path
   end
 
   def complete
@@ -71,7 +75,12 @@ class Public::OrdersController < ApplicationController
 
 private
   def order_params
-    params.require(:order).permit(:pay_type, :postcode, :address, :name)
+    params.require(:order).permit(:custmre_id, :pay_type, :postcode, :address, :name, :delivery_cost, :total_pay)
+  end
+
+  def address_params
+    params.require(:address).permit(:customer_id, :postcode, :address, :name)
+
   end
 
 end
