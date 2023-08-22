@@ -57,9 +57,21 @@ gem "enum_help"
 <div>
   <button class="copy-button" onclick="copyToClipboard()"></button>
   <pre><code id="code-block">
-gem 'devise'  
-gem 'kaminari','~> 1.2.1'  
-gem "enum_help"
+$ git clone git@github.com:clover-dmmwebcamp/nagano-cake.git
+$ cd nagano-cake
+$ rails db:migrate
+$ rails db:seed
+$ yarn install
+$ bundle install
+$ yarn add @babel/plugin-proposal-private-methods @babel/plugin-proposal-private-property-in-object
+$ rails s
   </code></pre>
 </div>
+
+ 【管理者ページのログイン方法(admin/sign_in)】  
+
+管理者ページのログインに必要なメールアドレス及びパスワードは下記の通りです。
+
+メールアドレス：admin@admin  
+パスワード: clover
 
