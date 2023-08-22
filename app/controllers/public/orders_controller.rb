@@ -21,7 +21,7 @@ class Public::OrdersController < ApplicationController
     if params[:order][:select_address] == "0"
       @order.postcode = @customer.postcode
       @order.address = @customer.address
-      @order.name = @customer.first_name
+      @order.name = @customer.full_name
     elsif params[:order][:select_address] == "1"
       address = Address.find(params[:order][:address_id])
       @order.postcode = address.postcode
@@ -77,10 +77,4 @@ private
   def order_params
     params.require(:order).permit(:custmre_id, :pay_type, :postcode, :address, :name, :delivery_cost, :total_pay)
   end
-
-  def address_params
-    params.require(:address).permit(:customer_id, :postcode, :address, :name)
-
-  end
-
 end

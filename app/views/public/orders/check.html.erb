@@ -19,9 +19,9 @@
           <% @cart_products.each do |cart_product| %>
           <tr>
             <td><%= image_tag cart_product.product.product_image, size:"80x80", class: "mr-3" %><%= cart_product.product.name %></td>
-            <td><%= cart_product.product.add_tax_price %></td>
+            <td><%= cart_product.product.add_tax_price.to_s(:delimited) %></td>
             <td><%= cart_product.quantity %></td>
-            <td><%= cart_product.sum_of_price %></td>
+            <td><%= cart_product.sum_of_price.to_s(:delimited) %></td>
           </tr>
           <% end %>
         </tbody>
@@ -45,8 +45,8 @@
       </p>
       <!--お届け先-->
       <p><strong>お届け先</strong>
-       〒 <%= @order.postcode %><%= @order.address %></br>
-       <%= @order.name %>様
+       〒 <%= @order.postcode %> <%= @order.address %></br>
+       <%= @order.name %> 様
       </p>
 
       <div class="text-center">
