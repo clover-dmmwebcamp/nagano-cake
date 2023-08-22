@@ -21,9 +21,14 @@ InstagramのDMやメールで通販の注文を受けていたが、情報管理
 
 ## 使用したGem
 
-* gem 'devise'  
-* gem 'kaminari','~> 1.2.1'  
-* gem "enum_help"
+<div>
+  <button class="copy-button" onclick="copyToClipboard()"></button>
+  <pre><code id="code-block">
+gem 'devise'  
+gem 'kaminari','~> 1.2.1'  
+gem "enum_help"
+  </code></pre>
+</div>
 
 
 # 実装機能
@@ -48,4 +53,13 @@ InstagramのDMやメールで通販の注文を受けていたが、情報管理
 
 
 # 使用方法
+
+<div>
+  <button class="copy-button" onclick="copyToClipboard()"></button>
+  <pre><code id="code-block">
+gem 'devise'  
+gem 'kaminari','~> 1.2.1'  
+gem "enum_help"
+  </code></pre>
+</div>
 
