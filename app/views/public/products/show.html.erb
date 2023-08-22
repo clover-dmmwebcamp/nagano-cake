@@ -1,6 +1,17 @@
 <div class="container">
     <div class="row">
         <%= render 'category', categories: @categories %>
+        <!--エラー文-->
+        <% if @cart_product.errors.any? %>
+          <ul class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">
+              <%= @cart_product.errors.count %>件のエラーが発生しました
+            </h6>
+            <% @cart_product.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
         <div class="col-lg-10 mt-5">
             <div class="row">
                 <div class="col-lg-5 text-center">
@@ -20,11 +31,14 @@
                         </tr>
                         <% if @product.is_active %>
                             <tr><td class="text-success">販売中</td></tr>
-                            <%= form_with model: @cart_product, url: cart_products_path do |f| %>
+                            <%= form_with model: @cart_product, url: cart_products_path, method: :post do |f| %>
                                 <tr>
                                     <td>
-                                        <div class="d-inline-block"><%= f.select :quantity, *[1..10], include_blank: "個数選択" %></div>
-                                        <div class="d-inline-block ml-5"><%= f.submit "カートに入れる", class: "btn btn-success" %></div>
+                                        <div class="d-inline-block"><%= f.select :quantity, *[1..10], include_blank: "個数選択", required: true %></div>
+                                        <div class="d-inline-block ml-5"><%= f.submit "カートに入れる", class: "btn btn-success" %>
+                                        <%= f.hidden_field :customer_id, :value => current_customer.id %>
+                                        <%= f.hidden_field :product_id, :value => @product.id %>
+                                        </div>
                                     </td>
                                 </tr>
                             <% end %>
