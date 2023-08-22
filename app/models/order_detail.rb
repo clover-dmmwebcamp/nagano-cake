@@ -3,4 +3,9 @@ class OrderDetail < ApplicationRecord
 
   belongs_to :order
   belongs_to :product
+
+  # 商品ごとの税込合計金額
+  def total_price
+    include_tax * quantity
+  end
 end
