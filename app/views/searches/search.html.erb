@@ -1,15 +1,6 @@
 <div class="container">
-  <div>
-    <h1>検索結果一覧"<%= @content %>"</h1>
-
-<% if @results.present? %>
-  <ul>
-    <% @results.each do |result| %>
-      <li><%= result.name %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>検索結果はありません。</p>
-<% end %>
+  <h4>検索結果一覧(全<%= @results.count %>件) "<%= @content %>"</h4>
+  <div class="row">
+    <%= render 'searches/search_result', results: @results %>
   </div>
 </div>
