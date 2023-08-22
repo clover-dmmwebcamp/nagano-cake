@@ -1,5 +1,7 @@
 class Admin::ProductsController < ApplicationController
   def index
+    @category = Category.all
+    @products = Product.page(params[:page])
   end
 
   def new
@@ -22,10 +24,18 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
+    @categories = Category.all
   end
 
   def update
-
+    @product = Product.find(params[:id])
+    @categories = Category.all
+    if @product.update(product_params)
+      redirect_to admin_product_path(@product)
+    else
+      render "edit"
+    end
   end
   
   private
