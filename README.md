@@ -68,10 +68,23 @@ $ rails s
   </code></pre>
 </div>
 
- 【管理者ページのログイン方法(admin/sign_in)】  
+ 【管理者ページのログイン方法(admin/sign_in)】　　  
+URLの後ろに/admin/sign_inをつけてください。  
 
 管理者ページのログインに必要なメールアドレス及びパスワードは下記の通りです。
 
 メールアドレス：admin@admin  
 パスワード: clover
+
+# 設計書
+
+* [ER図](https://app.diagrams.net/#G1pNjD20RmUe4xmLC0e-HwxwVLlGPbaakC)
+* [テーブル定義書](https://docs.google.com/spreadsheets/d/1gC93dazzjdc0idLVDG35dT61ONneZaAsnbnCPVYRXOM/edit#gid=856357510)
+* [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/14PgkbXQDvTDCWXzeblN0see1SNN73QXncmW02U-LjFA/edit#gid=549108681)
+* [WBS](https://docs.google.com/spreadsheets/d/1AzxN9sKhNWAwFCtEN4o6SbkPBW1qD4gQbo-q9ZhCO6g/edit#gid=815106619)
+
+# 作成者アカウント
+個人Githubへのリンク
+
+* [はるか]
 
