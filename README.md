@@ -86,5 +86,8 @@ URLの後ろに/admin/sign_inをつけてください。
 # 作成者アカウント
 個人Githubへのリンク
 
-* [はるか]
+* [あっしー](https://github.com/takahiro0218)
+* [のぶ](https://github.com/m-ole0)
+* [はるか](https://github.com/haruka-ochiai)
+* [ゆうじ](https://github.com/yujinago)
 
