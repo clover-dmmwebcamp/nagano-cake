@@ -1,29 +1,28 @@
-## 概要
+# 概要
 
 このECサイトはDMM WEB CAMP生によるチーム開発課題です。  
 
-長野県にある洋菓子店「ながのCAKE」の商品を通販で販売する想定でECサイトを開発しました。<br>
+長野県にある洋菓子店「ながのCAKE」の商品を通販で販売する想定でECサイトを開発しました。  
 実在する店舗ではありませんので、参考までにご覧ください。
 
 
 ## 案件の背景
 
-Things you may want to cover:
+元々近隣住民が顧客だったが、昨年始めたInstagramから人気となり、全国から注文が来るようになった。  
+InstagramのDMやメールで通販の注文を受けていたが、情報管理が煩雑になってきたため、  
+管理機能を含んだ通販サイトを開設しようと思い至った。
 
-* Ruby version
 
-* System dependencies
+# 言語とフレームワークのバージョン
 
-* Configuration
+* ruby 3.1.2p20
+* Rails 6.1.7.4
+* Bootstrap
 
-* Database creation
+## 使用したGem
 
-* Database initialization
+* gem 'devise'  
+* gem 'kaminari','~> 1.2.1'  
+* gem "enum_help"  
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
