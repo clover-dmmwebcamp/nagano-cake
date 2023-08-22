@@ -10,6 +10,10 @@ class Product < ApplicationRecord
   validates :without_tax, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :is_active, inclusion: { in: [true, false] }
 
+  def self.partial_search(content)
+    where("name LIKE?", '%'+content+'%')
+  end
+
   def add_tax_price
     (self.without_tax * 1.10).round
   end

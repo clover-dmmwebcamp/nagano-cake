@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    <h1>検索結果一覧"<%= @content %>"</h1>
+
+<% if @results.present? %>
+  <ul>
+    <% @results.each do |result| %>
+      <li><%= result.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>検索結果はありません。</p>
+<% end %>
+  </div>
+</div>
