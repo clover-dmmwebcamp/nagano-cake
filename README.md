@@ -1,7 +1,8 @@
 # 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このECサイトはDMM WEB CAMP生によるチーム開発課題です。
+長野県にある洋菓子店「ながのCAKE」の商品を通販で販売する想定でECサイトを開発しました。
+実在する店舗ではありませんので、参考までにご覧ください。
 
 Things you may want to cover:
 
