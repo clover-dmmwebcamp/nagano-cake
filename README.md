@@ -17,7 +17,7 @@ InstagramのDMやメールで通販の注文を受けていたが、情報管理
 
 * ruby 3.1.2p20
 * Rails 6.1.7.4
-* Bootstrap
+* Bootstrap v4.6.2
 
 ## 使用したGem
 
