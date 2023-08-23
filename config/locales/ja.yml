@@ -29,6 +29,7 @@
         category:
         product:
         address:
+        customer: "登録内容"
       attributes:
         category:
           name: "ジャンル名"
@@ -44,6 +45,7 @@
           address: "住所"
           postcode: "郵便番号"
         customer:
+          password: "パスワード"
           email: "メールアドレス"
           last_name: "姓(漢字)"
           first_name: "名(漢字)"

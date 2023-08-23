@@ -17,7 +17,7 @@ class Admin::OrdersController < ApplicationController
 
   def individual
     @customer = Customer.find(params[:id])
-    @orders = @customer.orders.page(params[:page]).per(10).order("created_at desc")
+    @orders = @customer.orders.page(params[:page]).order("created_at desc")
   end
 
   private
