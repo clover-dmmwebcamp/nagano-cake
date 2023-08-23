@@ -28,6 +28,8 @@
                                         <td class="d-inline-block ml-5"><%= f.submit "カートに入れる", class: "btn btn-success" %></td>
                                     </tr>
                                 <% end %>
+                            <% else %>
+                                <tr><td>※新規登録またはログインするとカートに追加できます。</td></tr>
                             <% end %>
                                
                         <% else %>
