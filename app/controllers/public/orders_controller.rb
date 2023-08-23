@@ -12,7 +12,7 @@ class Public::OrdersController < ApplicationController
     @order.address = @customer.address
     @order.name = @customer.first_name
     @delivery_cost = 800
-    @total = @cart_products.inject(0) { |sum, product| sum + product.sum_of_price }
+    @total = @cart_products.inject(0) { |sum, product| sum + product.subtotal }
     @total_pay = @total + @delivery_cost
 
     # select_addressで選択された番号をもとに住所を変更する。
