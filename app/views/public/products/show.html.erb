@@ -20,19 +20,16 @@
                         </tr>
                         <% if @product.is_active %>
                             <tr><td class="text-success">販売中</td></tr>
-                            <%= form_with model: @cart_product, url: cart_products_path, method: :post do |f| %>
-                                <tr>
-                                    <td>
-                                        <div class="d-inline-block"><%= f.select :quantity, *[1..10], include_blank: "個数選択", required: true %></div>
-                                        <div class="d-inline-block ml-5"><%= f.submit "カートに入れる", class: "btn btn-success" %>
-                                        <% if customer_signed_in? %>
-                                            <%= f.hidden_field :customer_id, :value => current_customer.id %>
-                                            <%= f.hidden_field :product_id, :value => @product.id %>
-                                        <% end %>
-                                        </div>
-                                    </td>
-                                </tr>
+                            <% if current_customer %>
+                                <%= form_with model: @cart_product, url: cart_products_path, method: :post do |f| %>
+                                    <tr>
+                                        <td class="d-inline-block"><%= f.select :quantity, *[1..10], include_blank: "個数選択", required: true %></td>
+                                        <%= f.hidden_field :product_id, :value => @product.id %>
+                                        <td class="d-inline-block ml-5"><%= f.submit "カートに入れる", class: "btn btn-success" %></td>
+                                    </tr>
+                                <% end %>
                             <% end %>
+                               
                         <% else %>
                             <tr><td class="text-danger">販売停止中</td></tr>
                         <% end %>

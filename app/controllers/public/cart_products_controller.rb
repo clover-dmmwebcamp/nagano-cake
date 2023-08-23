@@ -29,27 +29,25 @@ class Public::CartProductsController < ApplicationController
   end
   
   def create
-    if customer_signed_in?
-      @cart_product = current_customer.cart_products.new(cart_product_params)
-      if current_customer.cart_products.find_by(product_id: params[:cart_product][:product_id]).present?
+    @cart_product = current_customer.cart_products.new(cart_product_params)
+    if current_customer.cart_products.find_by(product_id: params[:cart_product][:product_id]).present?
+      if @cart_product.quantity.present?
         cart_product = current_customer.cart_products.find_by(product_id: params[:cart_product][:product_id])
         cart_product.quantity += params[:cart_product][:quantity].to_i
         cart_product.save
         flash[:notice] = "商品を追加しました"
         redirect_to cart_products_path
-  
-      elsif @cart_product.save
-        flash[:notice] = "商品を追加しました"
-        @cart_products_all = current_customer.cart_products.all
-        redirect_to cart_products_path
-  
       else
         redirect_to request.referer
         flash[:notice] = "商品を追加できませんでした/数量を選択してください"
       end
+    elsif @cart_product.save
+      flash[:notice] = "商品を追加しました"
+      @cart_products_all = current_customer.cart_products.all
+      redirect_to cart_products_path
     else
       redirect_to request.referer
-      flash[:notice] = "商品を追加できませんでした/ログインまたは新規登録をしてください"
+      flash[:notice] = "商品を追加できませんでした/数量を選択してください"
     end
   end
   
@@ -58,6 +56,6 @@ class Public::CartProductsController < ApplicationController
   
   
   def cart_product_params
-    params.require(:cart_product).permit(:customer_id, :product_id, :quantity)
+    params.require(:cart_product).permit(:product_id, :quantity)
   end
 end
