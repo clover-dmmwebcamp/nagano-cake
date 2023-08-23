@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       member do
         get "individual"
       end
-    end  
+    end
       resources :order_details, only: [:update]
     end
 
@@ -47,5 +47,5 @@ Rails.application.routes.draw do
     resources :addresses, except: [:new, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get "search" => "searches#search"
+    get 'search', to: 'searches#search'
 end

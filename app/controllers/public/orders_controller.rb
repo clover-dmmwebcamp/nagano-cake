@@ -2,7 +2,6 @@ class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
     @customer = current_customer
-    # カートが空の場合にフラッシュメッセージとリダイレクトするif文記述
   end
 
   def check
@@ -12,7 +11,6 @@ class Public::OrdersController < ApplicationController
     @order.postcode = @customer.postcode
     @order.address = @customer.address
     @order.name = @customer.first_name
-    # ↑Customerモデルにfull_nameを定義して、order.nameに入れる必要あり。
     @delivery_cost = 800
     @total = @cart_products.inject(0) { |sum, product| sum + product.sum_of_price }
     @total_pay = @total + @delivery_cost
@@ -75,6 +73,6 @@ class Public::OrdersController < ApplicationController
 
 private
   def order_params
-    params.require(:order).permit(:custmre_id, :pay_type, :postcode, :address, :name, :delivery_cost, :total_pay)
+    params.require(:order).permit(:customer_id, :pay_type, :postcode, :address, :name, :delivery_cost, :total_pay)
   end
 end
