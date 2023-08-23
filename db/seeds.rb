@@ -238,3 +238,4 @@ Address.create!(
   postcode: '4444444',
   address: '福岡県博多'
   )
+
