@@ -1,6 +1,6 @@
 <div class="container center-block">
   <div class="row">
-    <h4 class="ml-5 bg-light">注文情報確認</h4>
+    <h4 class="ml-5">注文情報確認</h4>
   </div>
   <div class="row">
     <div class="col-8">
@@ -58,7 +58,7 @@
           <%= f.hidden_field :pay_type, :value => @order.pay_type %>
           <%= f.hidden_field :delivery_cost, :value => @delivery_cost %>
           <%= f.hidden_field :total_pay, :value => @total_pay %>
-          <%= f.submit "注文を確定する", class: "btn btn-success" %>
+          <%= f.submit "注文を確定する", class: "btn btn_01" %>
         <% end %>
       </div>
     </div>

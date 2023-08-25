@@ -1,4 +1,6 @@
 class Admin::OrdersController < ApplicationController
+  before_action :authenticate_admin!
+
   def show
     @order = Order.find(params[:id])
     @total = @order.order_details.inject(0) {|sum, order_detail| sum + order_detail.total_price }

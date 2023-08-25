@@ -1,4 +1,6 @@
 class Public::CartProductsController < ApplicationController
+  before_action :authenticate_customer!
+
   def index
     @cart_product = current_customer.cart_products.new
     @cart_products = current_customer.cart_products.all
@@ -27,7 +29,7 @@ class Public::CartProductsController < ApplicationController
     @cart_products.destroy_all
     redirect_to request.referer
   end
-  
+
   def create
     @cart_product = current_customer.cart_products.new(cart_product_params)
     if current_customer.cart_products.find_by(product_id: params[:cart_product][:product_id]).present?
@@ -50,11 +52,11 @@ class Public::CartProductsController < ApplicationController
       flash[:notice] = "商品を追加できませんでした/数量を選択してください"
     end
   end
-  
-  
+
+
   private
-  
-  
+
+
   def cart_product_params
     params.require(:cart_product).permit(:product_id, :quantity)
   end

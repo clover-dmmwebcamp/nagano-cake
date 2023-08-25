@@ -1,9 +1,9 @@
 <div class="col-lg-2 mt-5 p-0">
-    <div class="card border-dark">
-        <h6 class="card-header text-center border-dark">ジャンル検索</h6>
+    <div class="card headline">
+        <h6 class="card-header text-center ">ジャンル検索</h6>
         <% categories.each do |category| %>
             <li class="list-group-item border-0">
-                <%= link_to category.name, products_path(category_id: category.id), class: "text-decoration-none text-dark" %>
+                <%= link_to category.name, products_path(category_id: category.id), class: "link-category" %>
             </li>
         <% end %>
     </div>

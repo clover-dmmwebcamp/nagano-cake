@@ -15,19 +15,17 @@
 
             <div class="card-body">
               <div class="card-title">
-                <% if result.is_active %>
-                  <p class="text-success">販売中</p>
-                <% else %>
-                  <p class="text-danger">販売停止中</p>
-                <% end %>
-              </div>
-              <div class="card-text">
-                <!--管理者がログインしている場合とそうでない場合で遷移先を変更-->
-                <% if admin_signed_in? %>
-                  <h6><%= link_to result.name, admin_product_path(result), class: "text-dark" %></h6>
-                <% else %>
-                  <h6><%= link_to result.name, product_path(result), class: "text-dark" %></h6>
-                <% end %>
+                <h6>
+                  <% if admin_signed_in? %>
+                    <%= link_to result.name, admin_product_path(result), class: "link-product-all" %>
+                  <% else %>
+                    <%= link_to result.name, product_path(result), class: "link-product-all" %>
+                  <% end %>
+
+                  <% unless result.is_active %>
+                    <p class="text-danger">販売停止中</p>
+                  <% end %>
+                </h6>
               </div>
             </div>
             <div class="card-footer bg-transparent border-0">

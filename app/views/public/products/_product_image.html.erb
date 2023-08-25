@@ -8,14 +8,12 @@
                     <% end %>
                     <div class="card-body">
                         <div class="card-title">
-                            <% if product.is_active %>
-                                <p class="text-success">販売中</p>
-                            <% else %>
-                                <p class="text-danger">販売停止中</p>
-                            <% end %>
-                        </div>
-                        <div class="card-text">
-                            <h6><%= link_to product.name, product_path(product), class: "text-dark" %></h6>
+                            <h6>
+                                <%= link_to product.name, product_path(product), class: "link-product-all" %>
+                                <% unless product.is_active %>
+                                    <p class="text-danger">販売停止中</p>
+                                <% end %>
+                            </h6>
                         </div>
                     </div>
                     <div class="card-footer bg-transparent border-0">

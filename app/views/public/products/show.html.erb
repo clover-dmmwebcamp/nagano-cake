@@ -20,12 +20,11 @@
                             </td>
                         </tr>
                         <% if @product.is_active %>
-                            <tr><td class="text-success">販売中</td></tr>
                             <% if current_customer %>
                                 <tr>
-                                    <td class="d-inline-block"><%= f.select :quantity, *[1..10], include_blank: "個数選択", required: true %></td>
+                                    <td class="d-inline-block mt-2"><%= f.select :quantity, *[1..10], include_blank: "個数選択", required: true %></td>
                                     <%= f.hidden_field :product_id, :value => @product.id %>
-                                    <td class="d-inline-block ml-5"><%= f.submit "カートに入れる", class: "btn btn-success" %></td>
+                                    <td class="d-inline-block ml-5"><%= f.submit "カートに入れる", class: "btn btn_01" %></td>
                                 </tr>
                             <% else %>
                                 <tr><td>※新規登録またはログインするとカートに追加できます。</td></tr>

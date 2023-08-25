@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col my-5">
-            
+
             <h4>会員一覧</h4>
                 <table class='table'>
                     <thead>
@@ -16,11 +16,11 @@
                         <% @customers.each do |customer| %>
                         <tr>
                             <td><%= customer.id %></td>
-                            <td><%= link_to customer.full_name, admin_customer_path(customer.id) %></td>
+                            <td><%= link_to customer.full_name, admin_customer_path(customer.id), class:"link-order-customer" %></td>
                             <td><%= customer.email %></td>
                             <td>
                                 <% if customer.is_deleted == false %>
-                                    <p class="text-success">有効</p>
+                                    <p>有効</p>
                                 <% else %>
                                     <p class="text-danger">退会</p>
                                 <% end %>

@@ -1,4 +1,6 @@
 class Public::AddressesController < ApplicationController
+  before_action :authenticate_customer!
+
   def index
     @addresses = current_customer.addresses.all
     @address = Address.new
@@ -33,7 +35,7 @@ class Public::AddressesController < ApplicationController
     address.destroy
     redirect_to request.referer
   end
-  
+
   private
 
   def address_params
