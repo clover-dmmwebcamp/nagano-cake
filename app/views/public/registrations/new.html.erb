@@ -5,7 +5,7 @@
 
       <%= form_with model: @customer, url: customer_registration_path do |f| %>
         <%= render "public/shared/error_messages", resource: resource %>
-        
+
         <table class="table table-borderless">
           <tr>
             <td>名前</td>
@@ -14,7 +14,7 @@
               (名) <%= f.text_field :first_name, placeholder: "道子" %>
             </td>
           </tr>
-          
+
           <tr>
             <td>フリガナ</td>
             <td>
@@ -22,35 +22,35 @@
               (メイ) <%= f.text_field :first_name_kana, placeholder: "ミチコ" %>
             </td>
           </tr>
-          
+
           <tr>
             <td>メールアドレス</td>
             <td>
               <%= f.text_field :email, placeholder: "sample@example.com" %>
             </td>
           </tr>
-          
+
           <tr>
             <td>郵便番号(ハイフンなし)</td>
             <td>
               <%= f.text_field :postcode, placeholder: "0000000" %>
             </td>
           </tr>
-          
+
           <tr>
             <td>住所</td>
             <td>
               <%= f.text_field :address, placeholder: "東京都渋谷区代々木神園町0-0" %>
             </td>
           </tr>
-          
+
           <tr>
             <td>電話番号(ハイフンなし)</td>
             <td>
               <%= f.text_field :phone_number, placeholder: "0000000000" %>
             </td>
           </tr>
-          
+
           <tr>
             <td>パスワード
               <% if @minimum_password_length %>
@@ -61,24 +61,24 @@
               <%= f.text_field :password, autocomplete: "new-password"  %>
             </td>
           </tr>
-          
+
           <tr>
             <td>パスワード(確認用)</td>
             <td>
               <%= f.text_field :password, autocomplete: "new-password"  %>
             </td>
           </tr>
-          
+
           <tr>
             <td></td>
             <td>
-              <%= f.submit "新規登録", class:"btn btn-success" %>
+              <%= f.submit "新規登録", class:"btn btn-outline-secondary" %>
             </td>
           </tr>
         </table>
-        
+
         <h4>既に登録済みの方</h4>
-        <%= render "public/shared/links" %>からログインしてください。
+        <i class="fa-regular fa-hand-pointer fa-rotate-90"></i><%= render "public/shared/links" %>からログインしてください。
         <% end %>
     </div>
   </div>

@@ -1,11 +1,8 @@
 <div class="container">
     <div class="row">
-        <div class="col my-5">
-           
-            <%= flash[:notice] %>
-            
+        <div class="col my-4">
             <h4 class="mt-3"><%= @customer.full_name %>さんの会員詳細</h4>
-            
+
             <table class='table table-borderless'>
                 <tr>
                     <td>会員ID</td>
@@ -39,7 +36,7 @@
                     <td>会員ステータス</td>
                     <td>
                         <% if @customer.is_deleted == false %>
-                        <p class="text-success"><b>有効</b></p>
+                        <p><b>有効</b></p>
                         <% else %>
                         <p class="text-danger"><b>退会</b></p>
                         <% end %>
@@ -47,8 +44,8 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-success" %>　
-                    <%= link_to "注文履歴一覧を見る", individual_admin_order_path(@customer), class: "btn btn-primary" %></td>
+                    <td><%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-outline-secondary" %>
+                    <%= link_to "注文履歴一覧を見る", individual_admin_order_path(@customer), class: "btn btn-outline-secondary" %></td>
                 </tr>
             </table>
         </div>

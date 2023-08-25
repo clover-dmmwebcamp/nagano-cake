@@ -9,10 +9,10 @@
                     </div>
                 </div>
             </div>
-            <h3 class="font-weight-bold d-inline">新着商品</h3>
+            <h3 class="font-weight-bold d-inline headline">新着商品</h3>
             <%= render 'public/products/product_image', products: @products %>
             <div class="d-flex justify-content-end mt-3">
-                <%= link_to "全ての商品を見る >", products_path %>
+                <%= link_to "全ての商品を見る >", products_path, class:"link-product-all"%>
             </div>
         </div>
     </div>

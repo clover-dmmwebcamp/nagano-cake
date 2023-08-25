@@ -10,7 +10,7 @@
                 <h5 class="d-inline">(全<%= @product_all.count %>件)</h5>
             <% end %>
             <%= render 'product_image', products: @products %>
-            <div class="d-flex justify-content-center mt-3">
+            <div class="d-flex justify-content-center mt-3 custom-pagination">
                 <%= paginate @products %>
             </div>
         </div>

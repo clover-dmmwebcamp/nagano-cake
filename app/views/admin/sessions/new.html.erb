@@ -1,24 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col my-5">
-      
+
       <h5>管理者ログイン</h5>
 
       <%= form_with model: @admin, url: admin_session_path  do |f| %>
-        <table class="table table-borderless">
+        <table class=" table table-borderless">
           <tr>
             <td><%= f.label :email, "メールアドレス" %></td>
             <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %></td>
           </tr>
-          
+
           <tr>
             <td><%= f.label :password, "パスワード" %></td>
             <td><%= f.password_field :password, class:"form-control" %></td>
           </tr>
-          
+
           <tr>
             <td></td>
-            <td><%= f.submit "ログイン", class:"btn btn-primary" %></td>
+            <td><%= f.submit "ログイン", class:"btn btn-outline-secondary" %></td>
           </tr>
         </table>
       <% end %>

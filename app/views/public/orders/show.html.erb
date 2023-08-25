@@ -3,7 +3,7 @@
   <div class="row justify-content-center" >
     <div class="col-8">
       <b>注文情報</b>
-      <table class="table table-bordered">
+      <table class="table">
         <thead>
           <tr><th class="bg-light">注文日</th><td><%= @order.created_at.strftime('%Y/%m/%d') %></td></tr>
           <tr><th class="bg-light">配送先</th><td>〒<%= @order.postcode %></br><%= @order.address %></br><%= @order.name %> 様</td></tr>
@@ -15,7 +15,7 @@
 
     <div class="col-4">
       <b>請求情報</b>
-      <table class="table table-bordered">
+      <table class="table">
         <thead>
           <!--商品合計金額を代入-->
           <tr><th class="bg-light">商品合計</th><td><%= (@order.total_pay - @order.delivery_cost).to_s(:delimited) %></td></tr>
@@ -43,9 +43,9 @@
             <% @order.order_details.each do |order_detail| %>
             <tr>
               <td><%= image_tag order_detail.product.product_image, size:"100x70", class:"mr-3" %></%><%= order_detail.product.name %></td>
-              <td><%= order_detail.include_tax.to_s(:delimited) %>円</td>
+              <td><%= order_detail.include_tax.to_s(:delimited) %></td>
               <td><%= order_detail.quantity %></td>
-              <td><%= order_detail.total_price.to_s(:delimited) %>円</td>
+              <td><%= order_detail.total_price.to_s(:delimited) %></td>
             </tr>
             <% end %>
           </tbody>

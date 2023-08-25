@@ -1,1 +1,141 @@
 @use '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
+
+body {
+ font-family: 'Zen Old Mincho', serif;
+ color: #977C46;
+}
+
+.table{
+  color: #977C46;
+}
+
+table:not(.table-borderless) {
+  border:1px solid #AAAAAA;
+}
+
+table:not(.table-borderless) > thead > tr > th{
+border:1px solid #AAAAAA;
+}
+
+table:not(.table-borderless) > tbody > tr > td{
+border :1px solid #AAAAAA;
+}
+
+table:not(.table-borderless) td {
+    border :1px solid #AAAAAA;
+}
+
+table:not(.table-borderless) th {
+    border :1px solid #AAAAAA;
+}
+
+.link {
+    color:#AAAAAA;
+}
+
+.link-product-all{
+    color: #977C46;
+}
+
+.link-product-all:hover{
+    color: #977C46;
+}
+
+.link-category{
+    color: #977C46;
+}
+
+.link-category:hover{
+    color: #977C46;
+}
+
+.link-order-time{
+    color: #977C46;
+}
+
+.link-order-time:hover{
+    color: #977C46;
+}
+
+.link-order-customer{
+    color: #977C46;
+}
+
+.link-order-customer:hover{
+    color: #977C46;
+}
+
+// ボタン真ん中寄せ
+.btn_01 {
+display: block;
+text-align: center;
+vertical-align: middle;
+text-decoration: none;
+width: 150px;
+height: 50px;
+margin: auto;
+padding: 1rem 4rem;
+font-weight: bold;
+border: 2px solid #977C46;
+color: #977C46;
+transition: 0.5s;
+padding: 10px;
+}
+
+.btn_01:hover {
+color: #FFF;
+background: #977C46;
+}
+
+// ボタン真ん中じゃない
+.btn_02 {
+display: block;
+text-align: center;
+vertical-align: middle;
+text-decoration: none;
+width: 150px;
+height: 50px;
+padding: 1rem 4rem;
+font-weight: bold;
+border: 2px solid #977C46;
+color: #977C46;
+transition: 0.5s;
+padding: 10px;
+}
+
+.btn_02:hover {
+color: #FFF;
+background: #977C46;
+}
+
+.trash{
+  color:#AAAAAA;
+}
+
+.trash:hover{
+  color: #dc3545;
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: #977C46; /* 好きな色に変更 */
+  border-color: #977C46;
+  color: #ffffff; /* アクティブなページのテキスト色 */
+}
+
+.custom-pagination .page-item:not(.active) .page-link {
+  background-color: #ffffff; /* 非アクティブなページの背景色 */
+  border-color: #ffffff;
+  color: #977C46; /* 非アクティブなページのテキスト色 */
+}
+
+.custom-pagination .page-item:not(.active) .page-link:hover {
+  background-color: #977C46;
+  border-color: #977C46;
+  color: #ffffff;
+}
+
+.top-message {
+  background-color: rgba(0,0,0,0.2);
+  color: #ffffff;
+}

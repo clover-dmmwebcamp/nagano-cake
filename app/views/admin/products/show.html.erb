@@ -33,7 +33,7 @@
                 <tr>
                     <td>販売ステータス</td>
                     <% if @product.is_active %>
-                        <td class="text-success">販売中</td>
+                        <td>販売中</td>
                     <% else %>
                         <td class="text-danger">販売停止中</td>
                     <% end %>
@@ -42,6 +42,6 @@
         </div>
     </div>
     <div class="text-center">
-        <%= link_to "編集する", edit_admin_product_path(@product), class: "btn btn-success" %>
+        <%= link_to "編集する", edit_admin_product_path(@product), class: "btn btn-outline-secondary" %>
     </div>
 </div>

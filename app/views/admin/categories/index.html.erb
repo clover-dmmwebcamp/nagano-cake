@@ -20,7 +20,7 @@
                     <div class="mr-5 d-inline-block">
                         <%= f.text_field :name, placeholder:"ジャンル名" %>
                     </div>
-                    <%= f.submit "新規登録", class:"btn btn-success" %>
+                    <%= f.submit "新規登録", class:"btn btn-outline-secondary mb-2" %>
                 <% end %>
             </div>
         </div>
@@ -28,20 +28,18 @@
     <div class="row">
         <div class="col-lg-5">
             <table class="table table-inverse ml-2">
-                <thead class="font-weight-bold table-secondary">
+                <thead class="font-weight-bold bg-light">
                     <tr>
                         <th class="text-center">ジャンル</th>
-                        <th colspan="3"></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <% @categories.each do |category| %>
                         <tr>
                             <td class="align-middle"><%= category.name %></td>
-                            <td></td>
-                            <td></td>
                             <td class="text-center">
-                                <%= link_to "編集する", edit_admin_category_path(category.id), class:"btn btn-success" %>
+                                <%= link_to "編集する", edit_admin_category_path(category.id), class:"btn btn-outline-secondary" %>
                             </td>
                         </tr>
                     <% end %>

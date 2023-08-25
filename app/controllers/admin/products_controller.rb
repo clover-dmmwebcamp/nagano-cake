@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
     @category = Category.all
     @products = Product.page(params[:page])
@@ -37,11 +39,11 @@ class Admin::ProductsController < ApplicationController
       render "edit"
     end
   end
-  
+
   private
-  
+
   def product_params
     params.require(:product).permit(:product_image, :name, :introduction, :category_id, :without_tax, :is_active)
   end
-  
+
 end
