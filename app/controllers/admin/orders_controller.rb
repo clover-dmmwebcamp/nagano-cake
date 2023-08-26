@@ -9,6 +9,7 @@ class Admin::OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order_details = OrderDetail.where(order_id: params[:id])
+    
     if @order.update(order_params)
       if @order.status == "check"
         @order_details.update_all(making_status: "wait")

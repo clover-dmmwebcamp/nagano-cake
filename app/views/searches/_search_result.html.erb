@@ -1,41 +1,41 @@
 <% if results.present? %>
-      <% results.each do |result| %>
-        <div class="col-sm-3 mt-3 px-1">
-          <div class="card h-100 border-0">
-            <!--管理者がログインしている場合とそうでない場合で遷移先を変更-->
-            <% if admin_signed_in? %>
-              <%= link_to admin_product_path(result) do %>
-                <%= image_tag result.product_image, size: "150x150", class: "w-100 rounded" %>
-              <% end %>
-            <% else %>
-              <%= link_to product_path(result) do %>
-                <%= image_tag result.product_image, size: "150x150", class: "w-100 rounded" %>
-              <% end %>
-            <% end %>
+  <% results.each do |result| %>
+    <div class="col-sm-3 mt-3 px-1">
+      <div class="card h-100 border-0">
+        <!--管理者がログインしている場合とそうでない場合で遷移先を変更-->
+        <% if admin_signed_in? %>
+          <%= link_to admin_product_path(result) do %>
+            <%= image_tag result.product_image, size: "150x150", class: "w-100 rounded" %>
+          <% end %>
+        <% else %>
+          <%= link_to product_path(result) do %>
+            <%= image_tag result.product_image, size: "150x150", class: "w-100 rounded" %>
+          <% end %>
+        <% end %>
 
-            <div class="card-body">
-              <div class="card-title">
-                <h6>
-                  <% if admin_signed_in? %>
-                    <%= link_to result.name, admin_product_path(result), class: "link-product-all" %>
-                  <% else %>
-                    <%= link_to result.name, product_path(result), class: "link-product-all" %>
-                  <% end %>
+        <div class="card-body">
+          <div class="card-title">
+            <h6>
+              <% if admin_signed_in? %>
+                <%= link_to result.name, admin_product_path(result), class: "link-product-all" %>
+              <% else %>
+                <%= link_to result.name, product_path(result), class: "link-product-all" %>
+              <% end %>
 
-                  <% unless result.is_active %>
-                    <p class="text-danger">販売停止中</p>
-                  <% end %>
-                </h6>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-0">
-              <h6>¥<%= result.add_tax_price.to_s(:delimited) %>(税込)<h6>
-            </div>
+              <% unless result.is_active %>
+                <p class="text-danger">販売停止中</p>
+              <% end %>
+            </h6>
           </div>
         </div>
-      <% end %>
+        <div class="card-footer bg-transparent border-0">
+          <h6>¥<%= result.add_tax_price.to_s(:delimited) %>(税込)<h6>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
 
-    <% else %>
-      <p>該当する商品はありません。</p>
-    <% end %>
+<% else %>
+  <p>該当する商品はありません。</p>
+<% end %>

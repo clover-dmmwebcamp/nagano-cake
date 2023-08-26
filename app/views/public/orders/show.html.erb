@@ -17,7 +17,6 @@
       <b>請求情報</b>
       <table class="table">
         <thead>
-          <!--商品合計金額を代入-->
           <tr><th class="bg-light">商品合計</th><td><%= (@order.total_pay - @order.delivery_cost).to_s(:delimited) %></td></tr>
           <tr><th class="bg-light">配送料</th><td><%= @order.delivery_cost %></td></tr>
           <tr><th class="bg-light">ご請求額</th><td><%= @order.total_pay.to_s(:delimited) %></td></tr>
