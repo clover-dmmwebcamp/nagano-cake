@@ -4,7 +4,7 @@
       <h4 class="my-3 ml-4">ショッピングカート</h4>
       <% if @cart_products.present? %>
         <div class="text-right">
-          <%= link_to "カートを空にする", destroy_all_cart_products_path, method: :delete, class: "btn btn-outline-danger" %>
+          <%= link_to "カートを空にする", destroy_all_cart_products_path, method: :delete, class: "btn btn-outline-danger",data: { confirm: "本当にカートの商品を全て削除しますか？" } %>
         </div>
         <table class="table table-bordered mt-3">
           <thead>

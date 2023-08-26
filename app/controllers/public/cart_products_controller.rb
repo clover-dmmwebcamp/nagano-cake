@@ -22,12 +22,14 @@ class Public::CartProductsController < ApplicationController
     @cart_product = CartProduct.find(params[:id])
     @cart_product.destroy
     redirect_to request.referer
+    flash[:notice] = "商品を削除しました"
   end
 
   def destroy_all
     @cart_products = current_customer.cart_products.all
     @cart_products.destroy_all
     redirect_to request.referer
+    flash[:notice] = "カートの商品を全て削除しました"
   end
 
   def create
