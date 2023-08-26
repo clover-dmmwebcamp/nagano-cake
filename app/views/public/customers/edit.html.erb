@@ -1,75 +1,75 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
+  <div class="row">
+    <div class="col">
 
-            <h4 class="my-3 ml-4">会員情報編集</h4>
+      <h4 class="my-3 ml-4">会員情報編集</h4>
 
-            <% if @customer.errors.any? %>
-              <ul class="alert alert-danger" role="alert">
-                <h6 class="alert-heading">
-                    <%= @customer.errors.count %>件のエラーが発生しました
-                </h6>
-            <% @customer.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-              </ul>
-            <% end %>
+      <% if @customer.errors.any? %>
+        <ul class="alert alert-danger" role="alert">
+          <h6 class="alert-heading">
+            <%= @customer.errors.count %>件のエラーが発生しました
+          </h6>
+      <% @customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+        </ul>
+      <% end %>
 
-             <%= form_with model: @customer, url: customers_infomation_path, method: :patch do |f| %>
+      <%= form_with model: @customer, url: customers_infomation_path, method: :patch do |f| %>
 
-                <table class="table table-borderless">
-                    <tr>
-                        <td>氏名</td>
-                        <td>
-                          <%= f.text_field :last_name, autofocus: true %>
-                          <%= f.text_field :first_name %>
-                        </td>
-                    </tr>
+        <table class="table table-borderless">
+          <tr>
+            <td>氏名</td>
+            <td>
+              <%= f.text_field :last_name, autofocus: true %>
+              <%= f.text_field :first_name %>
+            </td>
+          </tr>
 
-                    <tr>
-                        <td>フリガナ</td>
-                        <td>
-                          <%= f.text_field :last_name_kana %>
-                          <%= f.text_field :first_name_kana %>
-                        </td>
-                    </tr>
+          <tr>
+            <td>フリガナ</td>
+            <td>
+              <%= f.text_field :last_name_kana %>
+              <%= f.text_field :first_name_kana %>
+            </td>
+          </tr>
 
-                    <tr>
-                        <td>郵便番号</td>
-                        <td>
-                          <%= f.text_field :postcode %>
-                        </td>
-                    </tr>
+          <tr>
+            <td>郵便番号</td>
+            <td>
+              <%= f.text_field :postcode %>
+            </td>
+          </tr>
 
-                    <tr>
-                        <td>住所</td>
-                        <td>
-                          <%= f.text_field :address %>
-                        </td>
-                    </tr>
+          <tr>
+            <td>住所</td>
+            <td>
+              <%= f.text_field :address %>
+            </td>
+          </tr>
 
-                    <tr>
-                        <td>電話番号(ハイフンなし)</td>
-                        <td>
-                          <%= f.text_field :phone_number %>
-                        </td>
-                    </tr>
+          <tr>
+            <td>電話番号(ハイフンなし)</td>
+            <td>
+              <%= f.text_field :phone_number %>
+            </td>
+          </tr>
 
-                    <tr>
-                        <td>メールアドレス</td>
-                        <td>
-                          <%= f.text_field :email %>
-                        </td>
-                    </tr>
+          <tr>
+            <td>メールアドレス</td>
+            <td>
+              <%= f.text_field :email %>
+            </td>
+          </tr>
 
-                    <tr>
-                        <td></td>
-                        <td><%= f.submit "編集内容を保存", class:"btn btn-outline-secondary" %></td>
-                        <td><%= link_to "退会する", customers_check_path, class:"btn btn-outline-danger" %></td>
-                    </tr>
-
-                </table>
-            <% end %>
-        </div>
+          <tr>
+            <td></td>
+            <td><%= f.submit "編集内容を保存", class:"btn btn-outline-secondary" %></td>
+            <td><%= link_to "退会する", customers_check_path, class:"btn btn-outline-danger" %></td>
+          </tr>
+        </table>
+        
+        <% end %>
     </div>
+  </div>
 </div>

@@ -9,7 +9,7 @@
           <tr>
             <td><%= f.label :email, "メールアドレス" %></td>
             <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %></td>
-          </tr>
+          <tr>
 
           <tr>
             <td><%= f.label :password, "パスワード" %></td>
@@ -22,9 +22,7 @@
           </tr>
         </table>
       <% end %>
-
-
-
+      
       <%= render "admin/shared/links" %>
    </div>
   </div>
