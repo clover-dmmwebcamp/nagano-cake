@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <%= render 'category', categories: @categories %>
-        <div class="col-lg-10 mt-5">
+        <div class="col-lg-10 mt-3">
             <% if params[:category_id] %>
                 <h3 class="font-weight-bold d-inline"><%= @category.name %>一覧</h3>
                 <h5 class="d-inline">(全<%= @category_product_all.count %>件)</h5>
