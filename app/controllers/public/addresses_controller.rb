@@ -1,44 +1,65 @@
-class Public::AddressesController < ApplicationController
+class Public::CartProductsController < ApplicationController
   before_action :authenticate_customer!
 
   def index
-    @addresses = current_customer.addresses.all
-    @address = Address.new
-  end
-
-  def edit
-    @address = Address.find(params[:id])
-  end
-
-  def create
-    @address = Address.new(address_params)
-    @address.customer_id = current_customer.id
-    @addresses = current_customer.addresses.all
-    if @address.save
-      redirect_to request.referer
-    else
-      render :index
-    end
+    @cart_product = current_customer.cart_products.new
+    @cart_products = current_customer.cart_products.all
+    @total = @cart_products.inject(0){ |sum, product| sum + product.subtotal}
   end
 
   def update
-    @address = Address.find(params[:id])
-    if @address.update(address_params)
-      redirect_to addresses_path
+    @cart_product = CartProduct.find(params[:id])
+    if @cart_product.update(cart_product_params)
+      redirect_to request.referer
+      flash[:notice] = "数量を変更しました"
     else
-      render :edit
+      redirect_to request.referer
+      flash[:notice] = "数量を選択してください"
     end
   end
 
   def destroy
-    address = Address.find(params[:id])
-    address.destroy
+    @cart_product = CartProduct.find(params[:id])
+    @cart_product.destroy
     redirect_to request.referer
+    flash[:notice] = "商品を削除しました"
   end
+
+  def destroy_all
+    @cart_products = current_customer.cart_products.all
+    @cart_products.destroy_all
+    redirect_to request.referer
+    flash[:notice] = "カートの商品を全て削除しました"
+  end
+
+  def create
+    @cart_product = current_customer.cart_products.new(cart_product_params)
+    if current_customer.cart_products.find_by(product_id: params[:cart_product][:product_id]).present?
+      if @cart_product.quantity.present?
+        cart_product = current_customer.cart_products.find_by(product_id: params[:cart_product][:product_id])
+        cart_product.quantity += params[:cart_product][:quantity].to_i
+        cart_product.save
+        flash[:notice] = "商品を追加しました"
+        redirect_to cart_products_path
+      else
+        redirect_to request.referer
+        flash[:notice] = "商品を追加できませんでした/数量を選択してください"
+      end
+    elsif @cart_product.save
+      flash[:notice] = "商品を追加しました"
+      @cart_products_all = current_customer.cart_products.all
+      redirect_to cart_products_path
+    else
+      redirect_to request.referer
+      flash[:notice] = "商品を追加できませんでした/数量を選択してください"
+    end
+  end
+
 
   private
 
-  def address_params
-    params.require(:address).permit(:postcode, :address, :name)
+
+  def cart_product_params
+    params.require(:cart_product).permit(:product_id, :quantity)
   end
 end

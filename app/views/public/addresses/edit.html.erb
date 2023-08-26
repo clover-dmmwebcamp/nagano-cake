@@ -1,5 +1,6 @@
 <div class = "col-md-8 offset-md-1">
   <h4 class="my-3 ml-4">配送先編集</h4>
+  
   <!--エラー文-->
   <% if @address.errors.any? %>
     <ul class="alert alert-danger" role="alert">
@@ -11,6 +12,11 @@
       <% end %>
     </ul>
   <% end %>
+  
   <!--配送先登録フォーム-->
   <%= render "form", address: @address %>
+  
+  
+  
+  
 </div>
