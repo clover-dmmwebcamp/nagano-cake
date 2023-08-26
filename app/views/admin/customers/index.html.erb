@@ -5,11 +5,11 @@
             <h4>会員一覧</h4>
                 <table class='table'>
                     <thead>
-                        <tr>
-                            <th>会員ID</th>
-                            <th>氏名</th>
-                            <th>メールアドレス</th>
-                            <th>ステータス</th>
+                        <tr class="bg-light">
+                            <th style="width: 10%">会員ID</th>
+                            <th style="width: 35%">氏名</th>
+                            <th style="width: 35%">メールアドレス</th>
+                            <th style="width: 20%">ステータス</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,6 +29,9 @@
                         <% end %>
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center mt-3 custom-pagination">
+                    <%= paginate @customers %>
+                </div>
         </div>
     </div>
 </div>
