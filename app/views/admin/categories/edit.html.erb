@@ -1,28 +1,28 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h4 class="my-3 ml-4">ジャンル編集</h4>
-            <div class="my-3 ml-4">
-                <% if @category.errors.any? %>
-                    <ul class="alert alert-danger" role="alert">
-                        <h6 class="alert-heading">
-                            <%= @category.errors.count %>件のエラーが発生しました
-                        </h6>
-                        <% @category.errors.full_messages.each do |message| %>
-                            <li><%= message %></li>
-                        <% end %>
-                    </ul>
-                <% end %>
-                <%= form_with model: @category, url: admin_category_path do |f| %>
-                    <div class="mr-5 d-inline-block">
-                        <%= f.label :name, "ジャンル名", class:"font-weight-bold" %>
-                    </div>
-                    <div class="mr-5 d-inline-block">
-                        <%= f.text_field :name, class:"category_name" %>
-                    </div>
-                    <%= f.submit "変更を保存", class:"btn btn-outline-secondary mb-2" %>
-                <% end %>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col">
+      <h4 class="my-3 ml-4">ジャンル編集</h4>
+      <div class="my-3 ml-4">
+        <% if @category.errors.any? %>
+          <ul class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">
+              <%= @category.errors.count %>件のエラーが発生しました
+            </h6>
+            <% @category.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <%= form_with model: @category, url: admin_category_path do |f| %>
+          <div class="mr-5 d-inline-block">
+            <%= f.label :name, "ジャンル名", class:"font-weight-bold" %>
+          </div>
+          <div class="mr-5 d-inline-block">
+            <%= f.text_field :name, class:"category_name" %>
+          </div>
+          <%= f.submit "変更を保存", class:"btn btn-outline-secondary mb-2" %>
+        <% end %>
+      </div>
     </div>
+  </div>
 </div>

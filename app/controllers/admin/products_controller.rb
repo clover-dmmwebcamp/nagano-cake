@@ -15,6 +15,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(product_params)
     @categories = Category.all
     if @product.save
+      flash[:notice] = "商品情報を登録しました"
       redirect_to admin_product_path(@product)
     else
       render "new"
@@ -34,6 +35,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @categories = Category.all
     if @product.update(product_params)
+      flash[:notice] = "商品情報を変更しました"
       redirect_to admin_product_path(@product)
     else
       render "edit"
