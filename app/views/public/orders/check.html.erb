@@ -40,13 +40,15 @@
   <div class="row">
     <div class="col">
       <!--支払い方法-->
-      <p><strong>支払方法</strong>
-      <%= @order.pay_type_i18n %>
+      <p>
+        <strong>支払方法</strong>
+        <%= @order.pay_type_i18n %>
       </p>
       <!--お届け先-->
-      <p><strong>お届け先</strong>
-       〒 <%= @order.postcode %> <%= @order.address %></br>
-       <%= @order.name %> 様
+      <p>
+        <strong>お届け先</strong>
+        〒 <%= @order.postcode %> <%= @order.address %></br>
+        <%= @order.name %> 様
       </p>
 
       <div class="text-center">
