@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-10 mx-auto mb-5">
-            <h5 class="mt-4 ml-5">商品詳細</h5>
+        <div class="col-lg-10 mx-auto">
+            <h4 class="my-3 ml-4">商品詳細</h4>
         </div>
     </div>
     <div class="row">
@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <td>税込価格<br>(税抜価格)</td>
-                    <td><%= @product.add_tax_price.to_s(:delimited) %>（<%= @product.without_tax %>）円</td>
+                    <td><%= @product.add_tax_price.to_s(:delimited) %>（<%= @product.without_tax.to_s(:delimited) %>）円</td>
                 </tr>
                 <tr>
                     <td>販売ステータス</td>

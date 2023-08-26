@@ -7,7 +7,7 @@ class Address < ApplicationRecord
 
 
   def address_display
-    '〒' + postcode + ' ' + address + ' ' + name
+    '〒' + postcode + ' ' + address + ' ' + name + ' 様 '
   end
 
 end

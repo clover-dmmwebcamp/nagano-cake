@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
-        <div class="col my-2">
+        <div class="col">
 
-            <h2 class="mt-1">マイページ</h2>
+            <h4 class="my-3 ml-4">マイページ</h4>
                 <div class="d-flex align-items-center">
-                  <h4><b>登録情報</b></h4>
+                  <h5><b>登録情報</b></h5>
                   <%= link_to "編集する", customers_infomation_edit_path, class:"btn btn-outline-secondary ml-4 mb-2" %>
                 </div>
 
@@ -36,10 +36,10 @@
                     </table>
 
                         <div class="d-flex align-items-center">
-                        <h4><b>配送先</b></h4>
+                        <h5><b>配送先</b></h5>
                         <%= link_to "一覧を見る", addresses_path, class:"btn btn-outline-secondary ml-3" %>
                         <h3 class="mx-3">/</h3>
-                        <h4><b>注文履歴</b></h4>
+                        <h5><b>注文履歴</b></h5>
                         <%= link_to "一覧を見る", orders_path, class:"btn btn-outline-secondary ml-3" %>
                         </div>
 
