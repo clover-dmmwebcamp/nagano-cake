@@ -4,11 +4,11 @@
 
 長野県にある洋菓子店「ながのCAKE」の商品を通販で販売する想定でECサイトを開発しました。  
 実在する店舗ではありませんので、参考までにご覧ください。
+
 ![スクリーンショット 2023-08-27 11 26 23](https://github.com/clover-dmmwebcamp/nagano-cake/assets/138285954/a13ffc1d-0729-4660-bab0-8f546ad02eba)
 
 ![スクリーンショット 2023-08-27 11 24 44](https://github.com/clover-dmmwebcamp/nagano-cake/assets/138285954/5abbf332-6ef2-4a9d-9d42-300b73be3637)
 
-![スクリーンショット 2023-08-27 11 21 47](https://github.com/clover-dmmwebcamp/nagano-cake/assets/138285954/523c37bd-f314-4acd-9315-3dcc6cb6f19d)
 
 
 ## 案件の背景
