@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col-lg-4 mt-3 text-center">
-      <%= image_tag @product.get_product_image(300, 200) %>
+      <%= image_tag @product.get_product_image(500, 500), size: "300x200" %>
     </div>
     <div class="col-lg-6">
       <table class="table table-borderless">
@@ -35,7 +35,7 @@
           <% if @product.is_active %>
             <td>販売中</td>
           <% else %>
-            <td class="text-danger">販売停止中</td>
+            <td class="text-danger">売切れ</td>
           <% end %>
         </tr>
       </table>

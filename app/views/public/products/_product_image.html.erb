@@ -11,7 +11,7 @@
               <h6>
                 <%= link_to product.name, product_path(product), class: "link-product-all" %>
                 <% unless product.is_active %>
-                  <p class="text-danger">販売停止中</p>
+                  <p class="text-danger">売切れ</p>
                 <% end %>
               </h6>
             </div>
