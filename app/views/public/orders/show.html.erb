@@ -41,7 +41,7 @@
             <!--カート内商品を表示するeach文を記述-->
             <% @order.order_details.each do |order_detail| %>
             <tr>
-              <td><%= image_tag order_detail.product.product_image, size:"100x70", class:"mr-3" %></%><%= order_detail.product.name %></td>
+              <td><%= image_tag order_detail.product.get_product_image(300, 300), size:"100x70", class:"mr-3 rounded" %></%><%= order_detail.product.name %></td>
               <td><%= order_detail.include_tax.to_s(:delimited) %></td>
               <td><%= order_detail.quantity %></td>
               <td><%= order_detail.total_price.to_s(:delimited) %></td>

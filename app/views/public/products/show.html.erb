@@ -4,7 +4,7 @@
     <div class="col-lg-10 mt-5">
       <div class="row">
         <div class="col-lg-5 text-center">
-          <%= image_tag @product.product_image, size: "280x200" %>
+          <%= image_tag @product.get_product_image(500, 500), size: "350x250", class: "rounded" %>
         </div>
         <div class="col-lg-7">
           <%= form_with model: @cart_product, url: cart_products_path, method: :post do |f| %>
