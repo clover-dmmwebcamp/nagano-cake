@@ -7,9 +7,6 @@
 
 ![スクリーンショット 2023-08-27 11 26 23](https://github.com/clover-dmmwebcamp/nagano-cake/assets/138285954/a13ffc1d-0729-4660-bab0-8f546ad02eba)
 
-![スクリーンショット 2023-08-27 11 24 44](https://github.com/clover-dmmwebcamp/nagano-cake/assets/138285954/5abbf332-6ef2-4a9d-9d42-300b73be3637)
-
-
 
 ## 案件の背景
 
