@@ -5,11 +5,11 @@
         <!--管理者がログインしている場合とそうでない場合で遷移先を変更-->
         <% if admin_signed_in? %>
           <%= link_to admin_product_path(result) do %>
-            <%= image_tag result.product_image, size: "150x150", class: "w-100 rounded" %>
+            <%= image_tag result.get_product_image(500, 500), size: "150x150", class: "w-100 rounded" %>
           <% end %>
         <% else %>
           <%= link_to product_path(result) do %>
-            <%= image_tag result.product_image, size: "150x150", class: "w-100 rounded" %>
+            <%= image_tag result.get_product_image(500, 500), size: "150x150", class: "w-100 rounded" %>
           <% end %>
         <% end %>
 

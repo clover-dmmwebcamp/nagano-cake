@@ -18,7 +18,7 @@
           <!--商品情報登録後にeach文でカート内商品情報追加-->
           <% @cart_products.each do |cart_product| %>
           <tr>
-            <td><%= image_tag cart_product.product.product_image, size:"80x80", class: "mr-3" %><%= cart_product.product.name %></td>
+            <td><%= image_tag cart_product.product.get_product_image(300, 300), size:"80x80", class: "mr-3 rounded" %><%= cart_product.product.name %></td>
             <td><%= cart_product.product.add_tax_price.to_s(:delimited) %></td>
             <td><%= cart_product.quantity %></td>
             <td><%= cart_product.subtotal.to_s(:delimited) %></td>

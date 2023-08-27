@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col-lg-4 mt-3 text-center">
-      <%= image_tag @product.product_image, size: "300x200" %>
+      <%= image_tag @product.get_product_image(300, 200) %>
     </div>
     <div class="col-lg-6">
       <table class="table table-borderless">
