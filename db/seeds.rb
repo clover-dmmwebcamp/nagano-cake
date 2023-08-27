@@ -91,40 +91,40 @@ product1 = Product.create!(
 product1.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/cake_lemon.jpg')), filename: 'cake_lemon.jpg')
 
 product2 = Product.create!(
-  name: '輝々桃のケーキ(4号)',
-  introduction: '土台に自家製のパイ生地、中層には生クリーム、上には長野県産の輝々桃（きらきらもも）でバラを咲かせてみました。',
-  category_id: '1',
-  without_tax: '2500',
-  is_active: 'true',
-  )
-product2.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/cake_peach.jpg')), filename: 'cake_peach.jpg')
-
-product3 = Product.create!(
-  name: 'チョコレートケーキ(4号)',
-  introduction: '滑らかなチョコレートとサクサクとしたビスケットの組み合わせが病みつきになる、チョコレートビスケットケーキです。',
-  category_id: '1',
-  without_tax: '2200',
-  is_active: 'true',
-  )
-product3.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/cake_chocolate.png')), filename: 'cake_chocolate.png')
-
-product4 = Product.create!(
-  name: '季節のいちごケーキ(4号)',
-  introduction: '長野県産のサマープリンセスを使用したケーキです。土台には自家製のタルト生地を使い、層にはフランボワーズのムースを使用しており、細部までこだわりの詰まったケーキです。',
-  category_id: '1',
-  without_tax: '2200',
-  is_active: 'true',
-  )
-product4.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/cake_strawberry.jpg')), filename: 'cake_strawberry.jpg')
-
-product5 = Product.create!(
   name: 'カラフルキャンディ',
   introduction: '長野県一カラフルに仕上げました。長野県で一番SNS映えするキャンディいかがでしょうか。',
   category_id: '4',
   without_tax: '500',
   is_active: 'true',
   )
-product5.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/candy_lingering.jpg')), filename: 'candy_lingering.jpg')
+product2.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/candy_lingering.jpg')), filename: 'candy_lingering.jpg')
+
+product3 = Product.create!(
+  name: 'プリン  ~オーガニックナッツを添えて~',
+  introduction: '上部にはブルーベリーソースがかかっています。ブルーベリーの風味と味わい、滑らかな食感を楽しんでいただけるプリンです。',
+  category_id: '2',
+  without_tax: '500',
+  is_active: 'true',
+  )
+product3.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/pudding_nuts.jpg')), filename: 'pudding_nuts.jpg')
+
+product4 = Product.create!(
+  name: 'フロランタン キャラメリーゼ（5個入）',
+  introduction: 'サクサクの生地にほろ苦いカラメルの味がハーモニーを奏でます。そのマリアージュをお楽しみください。',
+  category_id: '3',
+  without_tax: '1350',
+  is_active: 'true',
+  )
+product4.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_furorantan.jpeg')), filename: 'yakigashi_furorantan.jpeg')
+
+product5 = Product.create!(
+  name: '輝々桃のケーキ(4号)',
+  introduction: '土台に自家製のパイ生地、中層には生クリーム、上には長野県産の輝々桃（きらきらもも）でバラを咲かせてみました。',
+  category_id: '1',
+  without_tax: '2500',
+  is_active: 'true',
+  )
+product5.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/cake_peach.jpg')), filename: 'cake_peach.jpg')
 
 product6 = Product.create!(
   name: 'ケーキ屋さんの金平糖(20粒)',
@@ -136,40 +136,41 @@ product6 = Product.create!(
 product6.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/candy_konpeito.jpg')), filename: 'candy_konpeito.jpg')
 
 product7 = Product.create!(
-  name: '小粒キャンディ(10粒)',
-  introduction: '小粒で甘いキャンディいかがでしょうか。甘い物好きにはたまりません。',
-  category_id: '4',
-  without_tax: '300',
-  is_active: 'true',
-  )
-product7.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/candy_candy.jpg')), filename: 'candy_candy.jpg')
-
-product8 = Product.create!(
-  name: 'ケーキ屋さんのべっこう飴(5粒)',
-  introduction: '透き通るほど美しいべっこう飴です。洗練された味をご賞味あれ。',
-  category_id: '4',
-  without_tax: '200',
-  is_active: 'true',
-  )
-product8.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/candy_tortoiseshell.jpg')), filename: 'candy_tortoiseshell.jpg')
-
-product9 = Product.create!(
-  name: 'プリン  ~オーガニックナッツを添えて~',
-  introduction: '上部にはブルーベリーソースがかかっています。ブルーベリーの風味と味わい、滑らかな食感を楽しんでいただけるプリンです。',
-  category_id: '2',
-  without_tax: '500',
-  is_active: 'true',
-  )
-product9.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/pudding_nuts.jpg')), filename: 'pudding_nuts.jpg')
-
-product10 = Product.create!(
   name: '濃厚キャラメルプリン',
   introduction: '濃厚な味わいのキャラメルプリンです。しっとりきめ細かく滑らかな食感です。',
   category_id: '2',
   without_tax: '400',
   is_active: 'true',
   )
-product10.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/pudding_caramel.jpg')), filename: 'pudding_caramel.jpg')
+product7.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/pudding_caramel.jpg')), filename: 'pudding_caramel.jpg')
+
+
+product8 = Product.create!(
+  name: 'こだわりマカロン５種セット',
+  introduction: '全20種の中からランダムで5種セットでお届けいたします。（１つの種類が複数個入ることはありません）',
+  category_id: '3',
+  without_tax: '850',
+  is_active: 'true',
+  )
+product8.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_macaron.jpg')), filename: 'yakigashi_macaron.jpg')
+
+product9 = Product.create!(
+  name: 'チョコレートケーキ(4号)',
+  introduction: '滑らかなチョコレートとサクサクとしたビスケットの組み合わせが病みつきになる、チョコレートビスケットケーキです。',
+  category_id: '1',
+  without_tax: '2200',
+  is_active: 'true',
+  )
+product9.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/cake_chocolate.png')), filename: 'cake_chocolate.png')
+
+product10 = Product.create!(
+  name: 'ケーキ屋さんのべっこう飴(5粒)',
+  introduction: '透き通るほど美しいべっこう飴です。洗練された味をご賞味あれ。',
+  category_id: '4',
+  without_tax: '200',
+  is_active: 'true',
+  )
+product10.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/candy_tortoiseshell.jpg')), filename: 'candy_tortoiseshell.jpg')
 
 product11 = Product.create!(
   name: '超なめらかプリン',
@@ -181,40 +182,40 @@ product11 = Product.create!(
 product11.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/pudding_simple.png')), filename: 'pudding_simple.png')
 
 product12 = Product.create!(
-  name: '季節のいちごのプリン',
-  introduction: '甘くて瑞々しい長野県産「サマープリンセス」を使用。イチゴ好きにはたまらない商品です。',
-  category_id: '2',
-  without_tax: '360',
-  is_active: 'true',
-  )
-product12.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/pudding_strawberry.jpeg')), filename: 'pudding_strawberry.jpeg')
-
-product13 = Product.create!(
-  name: 'フロランタン キャラメリーゼ（5個入）',
-  introduction: 'サクサクの生地にほろ苦いカラメルの味がハーモニーを奏でます。そのマリアージュをお楽しみください。',
-  category_id: '3',
-  without_tax: '1350',
-  is_active: 'true',
-  )
-product13.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_furorantan.jpeg')), filename: 'yakigashi_furorantan.jpeg')
-
-product14 = Product.create!(
-  name: 'こだわりマカロン５種セット',
-  introduction: '全20種の中からランダムで5種セットでお届けいたします。（１つの種類が複数個入ることはありません）',
-  category_id: '3',
-  without_tax: '850',
-  is_active: 'true',
-  )
-product14.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_macaron.jpg')), filename: 'yakigashi_macaron.jpg')
-
-product15 = Product.create!(
   name: 'クッキー詰め合わせ',
   introduction: '画像の5種のクッキーの詰め合わせです。気になるあの子にプレゼントしてみてはいかが？',
   category_id: '3',
   without_tax: '800',
   is_active: 'true',
   )
-product15.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_cookie.jpeg')), filename: 'yakigashi_cookie.jpeg')
+product12.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_cookie.jpeg')), filename: 'yakigashi_cookie.jpeg')
+
+product13 = Product.create!(
+  name: '小粒キャンディ(10粒)',
+  introduction: '小粒で甘いキャンディいかがでしょうか。甘い物好きにはたまりません。',
+  category_id: '4',
+  without_tax: '300',
+  is_active: 'true',
+  )
+product13.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/candy_candy.jpg')), filename: 'candy_candy.jpg')
+
+product14 = Product.create!(
+  name: '季節のいちごのプリン',
+  introduction: '甘くて瑞々しい長野県産「サマープリンセス」を使用。イチゴ好きにはたまらない商品です。',
+  category_id: '2',
+  without_tax: '360',
+  is_active: 'true',
+  )
+product14.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/pudding_strawberry.jpeg')), filename: 'pudding_strawberry.jpeg')
+
+product15 = Product.create!(
+  name: '季節のいちごケーキ(4号)',
+  introduction: '長野県産のサマープリンセスを使用したケーキです。土台には自家製のタルト生地を使い、層にはフランボワーズのムースを使用しており、細部までこだわりの詰まったケーキです。',
+  category_id: '1',
+  without_tax: '2200',
+  is_active: 'true',
+  )
+product15.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/cake_strawberry.jpg')), filename: 'cake_strawberry.jpg')
 
 product16 = Product.create!(
   name: 'チョコレートマフィン',
@@ -224,6 +225,16 @@ product16 = Product.create!(
   is_active: 'true',
   )
 product16.product_image.attach(io: File.open(Rails.root.join('app/assets/images/product_images/yakigashi_muffin.jpg')), filename: 'yakigashi_muffin.jpg')
+
+product17 = Product.create!(
+  name: '大人のキャラメルチーズケーキ(1ピース)',
+  introduction: 'フランス産クリームチーズを使用したチーズケーキと、ほろ苦い自家製キャラメルを絶妙なバランスで組み合わせた一品です。',
+  category_id: '1',
+  without_tax: '800',
+  is_active: 'true',
+  )
+product17.product_image.attach(io: File.open(Rails.root.join('app/assets/images/top_images/top_cake7.jpg')), filename: 'top_cake7.jpg')
+
 
 Address.create!(
   customer_id: '1',
