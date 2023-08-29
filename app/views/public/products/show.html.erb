@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <%= render 'category', categories: @categories %>
+    <div class="col-lg-10 mt-5">
+      <div class="row">
+        <div class="col-lg-5 text-center">
+          <%= image_tag @product.get_product_image(500, 500), size: "350x250", class: "rounded" %>
+        </div>
+        <div class="col-lg-7">
+          <%= form_with model: @cart_product, url: cart_products_path, method: :post do |f| %>
+            <table class="table table-borderless">
+              <tr><td><h3 class="font-weight-bold"><%= @product.name %></h3></td></tr>
+              <tr><td><%= @product.introduction %></td></tr>
+              <tr>
+                <td>
+                  <h4 class="font-weight-bold d-inline-block">
+                    ¥ <%= @product.add_tax_price.to_s(:delimited) %>
+                  </h4>
+                  <p class="h6 d-inline-block">(税込)</p>
+                </td>
+              </tr>
+              <% if @product.is_active %>
+                <% if current_customer %>
+                  <tr>
+                    <td class="d-inline-block mt-2"><%= f.select :quantity, *[1..10], include_blank: "個数選択", required: true %></td>
+                    <%= f.hidden_field :product_id, :value => @product.id %>
+                    <td class="d-inline-block ml-5"><%= f.submit "カートに入れる", class: "btn btn_01" %></td>
+                  </tr>
+                <% else %>
+                  <tr><td>※新規登録またはログインするとカートに追加できます。</td></tr>
+                <% end %>
+              <% else %>
+                <tr><td class="text-danger">売切れ</td></tr>
+              <% end %>
+            </table>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

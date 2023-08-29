@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <%= render 'category', categories: @categories %>
+    <div class="col-lg-10 mt-3">
+      <% if params[:category_id] %>
+        <h3 class="font-weight-bold d-inline"><%= @category.name %>一覧</h3>
+        <h5 class="d-inline">(全<%= @category_product_all.count %>件)</h5>
+      <% else %>
+        <h3 class="font-weight-bold d-inline">商品一覧</h3>
+        <h5 class="d-inline">(全<%= @product_all.count %>件)</h5>
+      <% end %>
+      <%= render 'product_image', products: @products %>
+      <div class="d-flex justify-content-center mt-3 custom-pagination">
+        <%= paginate @products %>
+      </div>
+    </div>
+  </div>
+</div>
